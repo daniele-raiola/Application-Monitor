@@ -1,0 +1,108 @@
+/* ==================== MODERN CSS RESET ==================== */
+/* Based on Josh Comeau's approach with sensible defaults for a mobile web app */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Remove scrollbar from body — critical for viewport lock */
+body {
+  overflow: hidden;
+}
+
+/* Ensure inputs don't have weird default styling on iOS */
+input[type="text"],
+input[type="date"],
+input[type="url"],
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+/* Focus styling for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}

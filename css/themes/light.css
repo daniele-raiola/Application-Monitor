@@ -1,0 +1,14 @@
+/* ==================== LIGHT THEME ==================== */
+
+:root,
+[data-theme="light"] {
+  --color-bg: #F7F7F2;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #F0F0EB;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #5A5A5A;
+}
+
+body {
+  color-scheme: light;
+}

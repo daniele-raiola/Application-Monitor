@@ -1,0 +1,98 @@
+/* ==================== DARK THEME ==================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #121212;
+    --color-surface: #1E1E1E;
+    --color-surface-raised: #2A2A2A;
+    --color-primary: #5B8FD4;
+    --color-accent: #E8A020;
+    --color-success: #2D8C4E;
+    --color-warning: #E07820;
+    --color-danger: #E74C3C;
+    --color-muted: #6B6B6B;
+    --color-text: #E8E8E8;
+    --color-text-secondary: #A0A0A0;
+
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    --shadow-modal: 0 -4px 32px rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .app-card {
+    background-color: var(--color-surface);
+  }
+
+  .modal-sheet {
+    background-color: var(--color-surface);
+  }
+
+  .form-input,
+  .form-textarea {
+    background-color: var(--color-surface-raised);
+    border-color: var(--color-muted);
+    color: var(--color-text);
+  }
+
+  .calendar-grid__cell {
+    background-color: var(--color-surface-raised);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Dark theme via data-theme attribute */
+[data-theme="dark"] {
+  --color-bg: #121212;
+  --color-surface: #1E1E1E;
+  --color-surface-raised: #2A2A2A;
+  --color-primary: #5B8FD4;
+  --color-accent: #E8A020;
+  --color-success: #2D8C4E;
+  --color-warning: #E07820;
+  --color-danger: #E74C3C;
+  --color-muted: #6B6B6B;
+  --color-text: #E8E8E8;
+  --color-text-secondary: #A0A0A0;
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-modal: 0 -4px 32px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .app-card {
+  background-color: var(--color-surface);
+}
+
+[data-theme="dark"] .modal-sheet {
+  background-color: var(--color-surface);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-textarea {
+  background-color: var(--color-surface-raised);
+  border-color: var(--color-muted);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .calendar-grid__cell {
+  background-color: var(--color-surface-raised);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .screen--dashboard,
+[data-theme="dark"] .screen--applications,
+[data-theme="dark"] .screen--calendar,
+[data-theme="dark"] .screen--detail,
+[data-theme="dark"] .screen--settings {
+  background-color: var(--color-bg);
+}
+
+/* Light theme override */
+[data-theme="light"] {
+  --color-bg: #F7F7F2;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #F0F0EB;
+  --color-primary: #2C3E8C;
+}

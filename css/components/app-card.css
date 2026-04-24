@@ -1,0 +1,250 @@
+/* ==================== APPLICATION CARD COMPONENT ==================== */
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  cursor: pointer;
+  touch-action: pan-y pinch-zoom;
+  /* For accepted state */
+}
+
+.app-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.app-card--accepted {
+  border: 2px solid var(--status-accepted);
+  background: linear-gradient(135deg, var(--color-surface) 95%, rgba(232, 160, 32, 0.05));
+}
+
+.app-card--rejected {
+  opacity: 0.6;
+  filter: grayscale(50%);
+}
+
+.app-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: var(--space-3);
+  gap: var(--space-2);
+}
+
+.app-card__title {
+  flex: 1;
+}
+
+.app-card__university {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.app-card__program {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  word-break: break-word;
+}
+
+.app-card__status-chip {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: var(--color-surface-raised);
+  color: var(--color-text);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  flex-shrink: 0;
+}
+
+/* Status-specific chip colors */
+.app-card__status-chip[data-status="planning"] { background-color: var(--status-planning); color: white; }
+.app-card__status-chip[data-status="drafting"] { background-color: var(--status-drafting); color: white; }
+.app-card__status-chip[data-status="submitted"] { background-color: var(--status-submitted); color: white; }
+.app-card__status-chip[data-status="under-review"] { background-color: var(--status-under-review); color: white; }
+.app-card__status-chip[data-status="interviewing"] { background-color: var(--status-interviewing); color: white; }
+.app-card__status-chip[data-status="accepted"] { background-color: var(--status-accepted); color: white; }
+.app-card__status-chip[data-status="rejected"] { background-color: var(--status-rejected); color: white; }
+
+.app-card__meta {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+}
+
+.app-card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-text-secondary);
+}
+
+.app-card__countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-success);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  animation: countdown-pulse 2s ease-in-out infinite;
+}
+
+.app-card__countdown--warning {
+  background-color: var(--color-warning);
+  animation: countdown-pulse-warning 1s ease-in-out infinite;
+}
+
+.app-card__countdown--critical {
+  background-color: var(--color-danger);
+  animation: countdown-pulse-critical 0.6s ease-in-out infinite;
+}
+
+@keyframes countdown-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes countdown-pulse-warning {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes countdown-pulse-critical {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.app-card__progress-bar {
+  height: 4px;
+  background-color: var(--color-surface-raised);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+
+.app-card__progress-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  transition: width var(--duration-normal) var(--ease-smooth);
+}
+
+.app-card__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.app-card__stepper {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.app-card__stepper-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-raised);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.25rem;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  touch-action: manipulation;
+}
+
+.app-card__stepper-btn:active {
+  background-color: var(--color-primary);
+  color: white;
+  transform: scale(0.95);
+}
+
+.app-card__stepper-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.app-card__detail-link {
+  flex: 1;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  cursor: pointer;
+  justify-content: center;
+}
+
+.app-card__detail-link:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.app-card__delete-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-danger);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  flex-shrink: 0;
+}
+
+.app-card__delete-btn:active {
+  background-color: var(--color-danger);
+  color: white;
+  transform: scale(0.95);
+}
+
+/* Entry animation */
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-card--entering {
+  animation: card-enter var(--duration-normal) var(--ease-bounce) forwards;
+}
+
+/* Mobile swipe behavior hints */
+@media (max-width: 480px) {
+  .app-card {
+    margin-bottom: var(--space-3);
+  }
+}

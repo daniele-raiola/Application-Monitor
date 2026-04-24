@@ -1,0 +1,85 @@
+/* ==================== FLOATING ACTION BUTTON ==================== */
+
+.fab {
+  position: fixed;
+  bottom: calc(var(--bottom-nav-height) + 16px);
+  right: 20px;
+  width: var(--fab-size);
+  height: var(--fab-size);
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-fab);
+  z-index: var(--z-fab);
+  transition: all var(--duration-fast) var(--ease-smooth));
+  touch-action: manipulation;
+  padding: 0;
+}
+
+.fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(44, 62, 140, 0.4);
+}
+
+.fab:active {
+  transform: scale(0.92);
+}
+
+/* Entry animation */
+@keyframes fab-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fab--entering {
+  animation: fab-enter var(--duration-normal) var(--ease-bounce) forwards;
+}
+
+/* Pulse animation for empty state */
+@keyframes fab-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(44, 62, 140, 0.35);
+  }
+  50% {
+    box-shadow: 0 4px 24px rgba(44, 62, 140, 0.5);
+  }
+}
+
+.fab--pulse {
+  animation: fab-pulse 2s ease-in-out infinite;
+}
+
+/* Hidden state (for read-only screens) */
+.fab--hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Support for notched devices */
+@supports (padding: max(0px)) {
+  .fab {
+    right: max(20px, calc(env(safe-area-inset-right) + 8px));
+    bottom: calc(var(--bottom-nav-height) + 16px + max(0, env(safe-area-inset-bottom)));
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .fab {
+    right: 32px;
+    bottom: calc(var(--bottom-nav-height) + 24px);
+  }
+}

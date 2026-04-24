@@ -1,0 +1,95 @@
+/* ==================== CALENDAR SCREEN ==================== */
+
+.screen--calendar {
+  padding: var(--space-4);
+}
+
+.calendar-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Upcoming events */
+.upcoming-events {
+  margin-top: var(--space-4);
+}
+
+.upcoming-events__title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.5px;
+}
+
+.upcoming-events__strip {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-2);
+}
+
+.upcoming-events__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-text-secondary);
+  color: var(--color-text);
+  font-size: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.upcoming-events__chip:active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.upcoming-events__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.upcoming-events__date {
+  font-weight: 600;
+}
+
+.upcoming-events__empty {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  padding: var(--space-4);
+}
+
+/* Date event in bottom sheet */
+.date-event {
+  padding: var(--space-4);
+  background-color: var(--color-surface-raised);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+.date-event__type {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .screen--calendar {
+    padding: var(--space-8) var(--space-6);
+  }
+}

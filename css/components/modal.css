@@ -1,0 +1,207 @@
+/* ==================== MODAL / BOTTOM SHEET COMPONENT ==================== */
+
+.modal-scrim {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-smooth));
+  z-index: calc(var(--z-modal) - 1);
+}
+
+.modal-scrim--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: var(--space-6);
+  padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
+  box-shadow: var(--shadow-modal);
+  transform: translateY(100%);
+  transition: transform var(--duration-slow) var(--ease-modal));
+  z-index: var(--z-modal);
+  max-height: 90dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-sheet--open {
+  transform: translateY(0);
+}
+
+.modal-sheet__drag-handle {
+  width: 40px;
+  height: 4px;
+  background-color: var(--color-surface-raised);
+  border-radius: var(--radius-pill);
+  margin: 0 auto var(--space-4);
+}
+
+.modal-sheet__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.modal-sheet__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.modal-sheet__close-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-surface-raised);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth));
+  touch-action: manipulation;
+}
+
+.modal-sheet__close-btn:active {
+  background-color: var(--color-primary);
+  color: white;
+  transform: scale(0.95);
+}
+
+.modal-sheet__content {
+  /* Scrollable content area */
+}
+
+.modal-sheet__actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  flex-direction: column;
+}
+
+/* ========== FORM ELEMENTS ========== */
+
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  transition: all var(--duration-fast) var(--ease-smooth));
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(44, 62, 140, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  resize: vertical;
+  transition: all var(--duration-fast) var(--ease-smooth));
+}
+
+.form-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(44, 62, 140, 0.1);
+}
+
+.form-error {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-danger);
+  margin-top: var(--space-1);
+}
+
+.form-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+/* ========== BUTTONS ========== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth));
+  touch-action: manipulation;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn--primary:active {
+  background-color: #1e2c5f;
+  transform: scale(0.98);
+}
+
+.btn--secondary {
+  background-color: var(--color-surface-raised);
+  color: var(--color-text);
+  border: 1px solid var(--color-text-secondary);
+}
+
+.btn--secondary:active {
+  background-color: var(--color-primary);
+  color: white;
+  transform: scale(0.98);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

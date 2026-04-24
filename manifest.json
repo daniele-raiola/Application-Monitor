@@ -1,0 +1,20 @@
+{
+  "name": "PhD Application Tracker",
+  "short_name": "PhD Tracker",
+  "description": "Manage all your PhD applications in one place. Track deadlines, documents, and statuses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F7F2",
+  "theme_color": "#2C3E8C",
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "assets/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "prefer_related_applications": false
+}

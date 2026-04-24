@@ -1,0 +1,64 @@
+/* ==================== APP SHELL LAYOUT ==================== */
+/* Viewport lock with bottom nav and scrollable content area */
+
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* CRITICAL: locks the viewport */
+}
+
+#app-shell {
+  display: grid;
+  grid-template-rows: 1fr var(--bottom-nav-height);
+  height: 100dvh;
+  position: relative;
+  background-color: var(--color-bg);
+}
+
+#screen-container {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  padding-bottom: calc(var(--fab-size) + var(--space-6));
+  /* Prevents FAB from obscuring last card */
+}
+
+/* ========== SCREEN TRANSITIONS ========== */
+
+.screen {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(24px);
+  transition: opacity var(--duration-normal) var(--ease-smooth),
+              transform var(--duration-normal) var(--ease-smooth);
+}
+
+.screen--active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0);
+}
+
+.screen--exit-left {
+  transform: translateX(-24px);
+  opacity: 0;
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+
+@media (min-width: 768px) {
+  #screen-container {
+    padding-bottom: calc(var(--fab-size) + var(--space-8));
+  }
+}
+
+/* Support for notched devices */
+@supports (padding: max(0px)) {
+  #screen-container {
+    padding-right: max(var(--space-4), env(safe-area-inset-right));
+    padding-left: max(var(--space-4), env(safe-area-inset-left));
+  }
+}

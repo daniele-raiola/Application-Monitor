@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="PhD Application Tracker — Manage all your PhD applications in one place.">
+  <meta name="theme-color" content="#2C3E8C">
+  
+  <title>PhD Application Tracker</title>
+  
+  <!-- CSS Files in Order: reset → tokens → typography → shell → grid → components → screens → themes -->
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/tokens.css">
+  <link rel="stylesheet" href="css/base/typography.css">
+  
+  <link rel="stylesheet" href="css/layout/shell.css">
+  <link rel="stylesheet" href="css/layout/grid.css">
+  
+  <link rel="stylesheet" href="css/components/app-card.css">
+  <link rel="stylesheet" href="css/components/bottom-nav.css">
+  <link rel="stylesheet" href="css/components/fab.css">
+  <link rel="stylesheet" href="css/components/modal.css">
+  <link rel="stylesheet" href="css/components/calendar.css">
+  <link rel="stylesheet" href="css/components/badge.css">
+  <link rel="stylesheet" href="css/components/checklist.css">
+  <link rel="stylesheet" href="css/components/toast.css">
+  <link rel="stylesheet" href="css/components/progress.css">
+  <link rel="stylesheet" href="css/components/filter-bar.css">
+  
+  <link rel="stylesheet" href="css/screens/dashboard.css">
+  <link rel="stylesheet" href="css/screens/applications.css">
+  <link rel="stylesheet" href="css/screens/calendar.css">
+  <link rel="stylesheet" href="css/screens/detail.css">
+  <link rel="stylesheet" href="css/screens/settings.css">
+  
+  <link rel="stylesheet" href="css/themes/light.css">
+  <link rel="stylesheet" href="css/themes/dark.css">
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+</head>
+<body>
+  <div id="app-shell">
+    <div id="screen-container">
+      <!-- Screens rendered here by router -->
+      <div id="dashboard-screen" class="screen screen--dashboard"></div>
+      <div id="applications-screen" class="screen screen--applications"></div>
+      <div id="calendar-screen" class="screen screen--calendar"></div>
+      <div id="detail-screen" class="screen screen--detail"></div>
+      <div id="settings-screen" class="screen screen--settings"></div>
+    </div>
+    
+    <!-- Bottom Navigation Bar -->
+    <nav id="bottom-nav" class="bottom-nav" role="navigation"></nav>
+  </div>
+  
+  <!-- Modal Container -->
+  <div id="modal-container"></div>
+  
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+  
+  <!-- Single entry point for all JavaScript -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

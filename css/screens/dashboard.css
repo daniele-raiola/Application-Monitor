@@ -1,0 +1,254 @@
+/* ==================== DASHBOARD SCREEN ==================== */
+
+.screen--dashboard {
+  padding: var(--space-6) var(--space-4);
+}
+
+.dashboard__header {
+  margin-bottom: var(--space-6);
+}
+
+.dashboard__greeting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.dashboard__hello {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.streak-badge--inactive {
+  background-color: var(--color-surface-raised);
+  color: var(--color-text-secondary);
+}
+
+.dashboard__section {
+  margin-bottom: var(--space-8);
+}
+
+.dashboard__section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.5px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.stat-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.stat-card__value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stat-card__value--success {
+  color: var(--color-success);
+}
+
+.stat-card__value--warning {
+  color: var(--color-warning);
+}
+
+.stat-card__value--gold {
+  color: var(--color-accent);
+}
+
+.stat-card__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+/* Progress Section */
+.progress-section {
+  margin-bottom: var(--space-4);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: var(--color-surface-raised);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--color-success);
+  border-radius: var(--radius-pill);
+  transition: width var(--duration-normal) var(--ease-smooth);
+}
+
+/* Status Breakdown */
+.status-bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.status-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.status-bar__label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.status-bar__track {
+  height: 6px;
+  background-color: var(--color-surface-raised);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.status-bar__fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width var(--duration-normal) var(--ease-smooth);
+}
+
+/* Deadline List */
+.deadline-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.deadline-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  text-align: left;
+  border: none;
+  width: 100%;
+}
+
+.deadline-card:active {
+  transform: scale(0.98);
+  background-color: var(--color-surface-raised);
+}
+
+.deadline-card__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-surface-raised);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  min-width: 60px;
+}
+
+.deadline-card__date--warning {
+  background-color: rgba(224, 120, 32, 0.2);
+  color: var(--color-warning);
+}
+
+.deadline-card__date--critical {
+  background-color: rgba(192, 57, 43, 0.2);
+  color: var(--color-danger);
+}
+
+.deadline-card__content {
+  flex: 1;
+}
+
+.deadline-card__uni {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.deadline-card__countdown {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-raised);
+  color: var(--color-text-secondary);
+}
+
+.deadline-card__countdown--warning {
+  background-color: rgba(224, 120, 32, 0.2);
+  color: var(--color-warning);
+}
+
+.deadline-card__countdown--critical {
+  background-color: rgba(192, 57, 43, 0.2);
+  color: var(--color-danger);
+}
+
+/* Empty state */
+.dashboard__empty {
+  text-align: center;
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.dashboard__empty p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .screen--dashboard {
+    padding: var(--space-8) var(--space-6);
+  }
+}
