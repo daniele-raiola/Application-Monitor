@@ -4,7 +4,7 @@
  */
 
 import { Modal } from '../components/Modal.js';
-import { toast } from '../components/toast.js';
+import { Toast as toast } from '../components/Toast.js';
 import { getUpcomingEvents, aggregateEvents, detectConflicts, getEventsForDate, getEventTypeColor } from '../services/calendar-service.js';
 import { getTodayISO, parseISODate, formatDate } from '../utils/date-utils.js';
 import { EVENT_TYPE_COLORS } from '../utils/constants.js';
