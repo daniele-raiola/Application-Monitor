@@ -1,98 +1,81 @@
 /* ==================== DARK THEME ==================== */
+/* Warm dark theme with olive-tinted blacks */
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #121212;
-    --color-surface: #1E1E1E;
-    --color-surface-raised: #2A2A2A;
-    --color-primary: #5B8FD4;
-    --color-accent: #E8A020;
-    --color-success: #2D8C4E;
-    --color-warning: #E07820;
-    --color-danger: #E74C3C;
-    --color-muted: #6B6B6B;
-    --color-text: #E8E8E8;
-    --color-text-secondary: #A0A0A0;
+    --color-bg: #141413;
+    --color-surface: #1e1e1d;
+    --color-surface-raised: #30302e;
+    --color-text: #faf9f5;
+    --color-text-secondary: #b0aea5;
+    --color-text-tertiary: #87867f;
+    --color-text-muted: #d1cfc5;
+    --color-dark-surface: #30302e;
+    --color-dark-text: #b0aea5;
 
-    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
-    --shadow-modal: 0 -4px 32px rgba(0, 0, 0, 0.5);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
-  }
+    --border-light: #30302e;
+    --border-warm: #3d3d3a;
+    --border-dark: #4d4c48;
 
-  .app-card {
-    background-color: var(--color-surface);
-  }
+    --ring-warm: #4d4c48;
+    --ring-deep: #5e5d59;
 
-  .modal-sheet {
-    background-color: var(--color-surface);
-  }
-
-  .form-input,
-  .form-textarea {
-    background-color: var(--color-surface-raised);
-    border-color: var(--color-muted);
-    color: var(--color-text);
-  }
-
-  .calendar-grid__cell {
-    background-color: var(--color-surface-raised);
-    border-color: rgba(255, 255, 255, 0.1);
+    --shadow-card: 0px 0px 0px 1px var(--border-light);
+    --shadow-card-elevated: 0 4px 24px rgba(0, 0, 0, 0.20);
+    --shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.40);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.20);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.30);
   }
 }
 
-/* Dark theme via data-theme attribute */
 [data-theme="dark"] {
-  --color-bg: #121212;
-  --color-surface: #1E1E1E;
-  --color-surface-raised: #2A2A2A;
-  --color-primary: #5B8FD4;
-  --color-accent: #E8A020;
-  --color-success: #2D8C4E;
-  --color-warning: #E07820;
-  --color-danger: #E74C3C;
-  --color-muted: #6B6B6B;
-  --color-text: #E8E8E8;
-  --color-text-secondary: #A0A0A0;
+  --color-bg: #141413;
+  --color-surface: #1e1e1d;
+  --color-surface-raised: #30302e;
+  --color-text: #faf9f5;
+  --color-text-secondary: #b0aea5;
+  --color-text-tertiary: #87867f;
+  --color-text-muted: #d1cfc5;
+  --color-dark-surface: #30302e;
+  --color-dark-text: #b0aea5;
 
-  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  --shadow-modal: 0 -4px 32px rgba(0, 0, 0, 0.5);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --border-light: #30302e;
+  --border-warm: #3d3d3a;
+  --border-dark: #4d4c48;
+
+  --ring-warm: #4d4c48;
+  --ring-deep: #5e5d59;
+
+  --shadow-card: 0px 0px 0px 1px var(--border-light);
+  --shadow-card-elevated: 0 4px 24px rgba(0, 0, 0, 0.20);
+  --shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.40);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.20);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.30);
 }
 
-[data-theme="dark"] .app-card {
-  background-color: var(--color-surface);
-}
-
+[data-theme="dark"] .app-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .deadline-card,
 [data-theme="dark"] .modal-sheet {
   background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
-[data-theme="dark"] .form-input,
-[data-theme="dark"] .form-textarea {
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="date"],
+[data-theme="dark"] input[type="url"],
+[data-theme="dark"] textarea {
   background-color: var(--color-surface-raised);
-  border-color: var(--color-muted);
+  border-color: var(--border-warm);
   color: var(--color-text);
 }
 
-[data-theme="dark"] .calendar-grid__cell {
-  background-color: var(--color-surface-raised);
-  border-color: rgba(255, 255, 255, 0.1);
+[data-theme="dark"] .bottom-nav {
+  background-color: var(--color-dark-surface);
+  border-top-color: var(--border-dark);
 }
 
-[data-theme="dark"] .screen--dashboard,
-[data-theme="dark"] .screen--applications,
-[data-theme="dark"] .screen--calendar,
-[data-theme="dark"] .screen--detail,
-[data-theme="dark"] .screen--settings {
-  background-color: var(--color-bg);
-}
-
-/* Light theme override */
-[data-theme="light"] {
-  --color-bg: #F7F7F2;
-  --color-surface: #FFFFFF;
-  --color-surface-raised: #F0F0EB;
-  --color-primary: #2C3E8C;
+[data-theme="dark"] .fab {
+  background-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(201, 100, 66, 0.40);
 }

@@ -1,11 +1,12 @@
 /* ==================== FILTER BAR COMPONENT ==================== */
+/* Claude Design System - Warm, rounded filter chips */
 
 .filter-bar {
   display: flex;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
   background-color: var(--color-surface);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--border-light);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   flex-wrap: wrap;
@@ -18,30 +19,33 @@
 }
 
 .filter-bar__label {
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.12px;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
   white-space: nowrap;
 }
 
-/* Filter Chips */
 .filter-chip {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--color-text-secondary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-warm);
   background-color: transparent;
   color: var(--color-text);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
   touch-action: manipulation;
   white-space: nowrap;
   flex-shrink: 0;
+  box-shadow: 0px 0px 0px 1px transparent;
 }
 
 .filter-chip:active {
@@ -66,7 +70,6 @@
   cursor: pointer;
 }
 
-/* Sort Dropdown */
 .sort-dropdown {
   display: flex;
   gap: var(--space-1);
@@ -77,15 +80,16 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--color-text-secondary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-warm);
   background-color: transparent;
   color: var(--color-text);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
   touch-action: manipulation;
 }
 
@@ -106,7 +110,7 @@
   top: 100%;
   right: 0;
   background-color: var(--color-surface);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   margin-top: var(--space-2);
   min-width: 150px;
@@ -114,7 +118,7 @@
   opacity: 0;
   pointer-events: none;
   transform: translateY(-8px);
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
 }
 
 .sort-dropdown__menu--open {
@@ -126,23 +130,24 @@
 .sort-dropdown__item {
   display: block;
   width: 100%;
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-3) var(--space-4);
   background: none;
   border: none;
   text-align: left;
   color: var(--color-text);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
   border-radius: 0;
 }
 
 .sort-dropdown__item:first-child {
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .sort-dropdown__item:last-child {
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 .sort-dropdown__item:hover,
@@ -153,23 +158,24 @@
 .sort-dropdown__item--active {
   background-color: var(--color-primary);
   color: white;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* Clear All Button */
 .filter-bar__clear {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  padding: var(--space-1) var(--space-2);
+  padding: var(--space-2) var(--space-3);
   border: none;
   background: none;
   color: var(--color-danger);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  font-weight: 500;
+  letter-spacing: 0.12px;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -183,7 +189,6 @@
   cursor: not-allowed;
 }
 
-/* Responsive: Horizontal scroll on small screens */
 @media (max-width: 480px) {
   .filter-bar {
     overflow-x: auto;

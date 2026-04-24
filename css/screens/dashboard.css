@@ -1,35 +1,39 @@
 /* ==================== DASHBOARD SCREEN ==================== */
+/* Claude Design System - Editorial, warm aesthetic */
 
 .screen--dashboard {
-  padding: var(--space-6) var(--space-4);
+  padding: var(--space-8) var(--space-4);
 }
 
 .dashboard__header {
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
 .dashboard__greeting {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .dashboard__hello {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.10;
   color: var(--color-text);
 }
 
 .streak-badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-pill);
-  background-color: var(--color-accent);
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
   color: white;
+  font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .streak-badge--inactive {
@@ -42,15 +46,15 @@
 }
 
 .dashboard__section-title {
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-3);
+  font-weight: 500;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-4);
 }
 
-/* Stats Grid */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -60,16 +64,23 @@
 
 .stat-card {
   background-color: var(--color-surface);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
   text-align: center;
   box-shadow: var(--shadow-card);
+  transition: box-shadow var(--duration-fast) var(--ease-smooth);
+}
+
+.stat-card:hover {
+  box-shadow: 0px 0px 0px 1px var(--ring-warm);
 }
 
 .stat-card__value {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
   color: var(--color-primary);
+  line-height: 1.20;
 }
 
 .stat-card__value--success {
@@ -80,18 +91,20 @@
   color: var(--color-warning);
 }
 
-.stat-card__value--gold {
-  color: var(--color-accent);
+.stat-card__value--brand {
+  color: var(--color-primary);
 }
 
 .stat-card__label {
+  font-family: var(--font-sans);
   font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12px;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
-  font-weight: 600;
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-2);
 }
 
-/* Progress Section */
 .progress-section {
   margin-bottom: var(--space-4);
 }
@@ -99,9 +112,10 @@
 .progress-label {
   display: flex;
   justify-content: space-between;
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .progress-bar {
@@ -118,24 +132,24 @@
   transition: width var(--duration-normal) var(--ease-smooth);
 }
 
-/* Status Breakdown */
 .status-bars {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .status-bar {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
 }
 
 .status-bar__label {
   display: flex;
   justify-content: space-between;
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
 }
 
 .status-bar__track {
@@ -151,20 +165,19 @@
   transition: width var(--duration-normal) var(--ease-smooth);
 }
 
-/* Deadline List */
 .deadline-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .deadline-card {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3);
+  gap: var(--space-4);
+  padding: var(--space-4);
   background-color: var(--color-surface);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-smooth);
@@ -175,28 +188,30 @@
 
 .deadline-card:active {
   transform: scale(0.98);
-  background-color: var(--color-surface-raised);
+  box-shadow: 0px 0px 0px 1px var(--ring-warm);
 }
 
 .deadline-card__date {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-3) var(--space-4);
   background-color: var(--color-surface-raised);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
-  min-width: 60px;
+  min-width: 64px;
+  box-shadow: 0px 0px 0px 1px var(--border-warm);
 }
 
 .deadline-card__date--warning {
-  background-color: rgba(224, 120, 32, 0.2);
+  background-color: rgba(224, 120, 32, 0.15);
   color: var(--color-warning);
 }
 
 .deadline-card__date--critical {
-  background-color: rgba(192, 57, 43, 0.2);
+  background-color: rgba(181, 51, 51, 0.15);
   color: var(--color-danger);
 }
 
@@ -205,40 +220,44 @@
 }
 
 .deadline-card__uni {
+  font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-text);
 }
 
 .deadline-card__countdown {
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 600;
-  padding: var(--space-1) var(--space-2);
+  font-weight: 500;
+  padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-sm);
   background-color: var(--color-surface-raised);
   color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+  display: inline-block;
 }
 
 .deadline-card__countdown--warning {
-  background-color: rgba(224, 120, 32, 0.2);
+  background-color: rgba(224, 120, 32, 0.15);
   color: var(--color-warning);
 }
 
 .deadline-card__countdown--critical {
-  background-color: rgba(192, 57, 43, 0.2);
+  background-color: rgba(181, 51, 51, 0.15);
   color: var(--color-danger);
 }
 
-/* Empty state */
 .dashboard__empty {
   text-align: center;
-  padding: var(--space-6);
+  padding: var(--space-8);
   background-color: var(--color-surface);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
 }
 
 .dashboard__empty p {
+  font-family: var(--font-sans);
   color: var(--color-text-secondary);
   margin-bottom: var(--space-4);
 }

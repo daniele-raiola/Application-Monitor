@@ -4,7 +4,7 @@
 html,
 body {
   height: 100%;
-  overflow: hidden; /* CRITICAL: locks the viewport */
+  overflow: hidden;
 }
 
 #app-shell {
@@ -19,12 +19,9 @@ body {
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  padding-bottom: calc(var(--fab-size) + var(--space-6));
-  /* Prevents FAB from obscuring last card */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(var(--fab-size) + var(--space-8));
 }
-
-/* ========== SCREEN TRANSITIONS ========== */
 
 .screen {
   position: absolute;
@@ -47,15 +44,12 @@ body {
   opacity: 0;
 }
 
-/* ========== RESPONSIVE ADJUSTMENTS ========== */
-
 @media (min-width: 768px) {
   #screen-container {
     padding-bottom: calc(var(--fab-size) + var(--space-8));
   }
 }
 
-/* Support for notched devices */
 @supports (padding: max(0px)) {
   #screen-container {
     padding-right: max(var(--space-4), env(safe-area-inset-right));

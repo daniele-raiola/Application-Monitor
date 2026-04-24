@@ -4,8 +4,8 @@
   "description": "Manage all your PhD applications in one place. Track deadlines, documents, and statuses.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F7F7F2",
-  "theme_color": "#2C3E8C",
+  "background_color": "#f5f4ed",
+  "theme_color": "#c96442",
   "orientation": "portrait-primary",
   "categories": ["education", "productivity"],
   "icons": [

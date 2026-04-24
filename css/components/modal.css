@@ -1,12 +1,13 @@
 /* ==================== MODAL / BOTTOM SHEET COMPONENT ==================== */
+/* Claude Design System - Warm, paper-like surfaces */
 
 .modal-scrim {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(20, 20, 19, 0.5);
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--duration-normal) var(--ease-smooth));
+  transition: opacity var(--duration-normal) var(--ease-smooth);
   z-index: calc(var(--z-modal) - 1);
 }
 
@@ -21,12 +22,12 @@
   left: 0;
   right: 0;
   background-color: var(--color-surface);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   padding: var(--space-6);
   padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
   box-shadow: var(--shadow-modal);
   transform: translateY(100%);
-  transition: transform var(--duration-slow) var(--ease-modal));
+  transition: transform var(--duration-slow) var(--ease-modal);
   z-index: var(--z-modal);
   max-height: 90dvh;
   overflow-y: auto;
@@ -53,14 +54,15 @@
 }
 
 .modal-sheet__title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 500;
   color: var(--color-text);
 }
 
 .modal-sheet__close-btn {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,8 +71,9 @@
   color: var(--color-text);
   font-size: 1.25rem;
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
   touch-action: manipulation;
+  box-shadow: 0px 0px 0px 1px var(--ring-warm);
 }
 
 .modal-sheet__close-btn:active {
@@ -98,8 +101,9 @@
 
 .form-label {
   display: block;
+  font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-text);
   margin-bottom: var(--space-2);
 }
@@ -107,44 +111,46 @@
 .form-input {
   width: 100%;
   padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-text-secondary);
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
   font-size: 1rem;
   background-color: var(--color-surface);
   color: var(--color-text);
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
 }
 
 .form-input:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(44, 62, 140, 0.1);
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px rgba(56, 152, 236, 0.15);
 }
 
 .form-input::placeholder {
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
 }
 
 .form-textarea {
   width: 100%;
   min-height: 120px;
   padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-text-secondary);
-  border-radius: var(--radius-sm);
-  font-family: inherit;
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
   font-size: 1rem;
   background-color: var(--color-surface);
   color: var(--color-text);
   resize: vertical;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
 }
 
 .form-textarea:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(44, 62, 140, 0.1);
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px rgba(56, 152, 236, 0.15);
 }
 
 .form-error {
   display: block;
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   color: var(--color-danger);
   margin-top: var(--space-1);
@@ -152,8 +158,9 @@
 
 .form-hint {
   display: block;
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
   margin-top: var(--space-1);
 }
 
@@ -165,30 +172,32 @@
   justify-content: center;
   gap: var(--space-2);
   min-height: 44px;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-6);
   border: none;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
   touch-action: manipulation;
 }
 
 .btn--primary {
   background-color: var(--color-primary);
   color: white;
+  box-shadow: 0px 0px 0px 1px var(--color-primary);
 }
 
 .btn--primary:active {
-  background-color: #1e2c5f;
+  background-color: #b55a3a;
   transform: scale(0.98);
 }
 
 .btn--secondary {
   background-color: var(--color-surface-raised);
   color: var(--color-text);
-  border: 1px solid var(--color-text-secondary);
+  box-shadow: 0px 0px 0px 1px var(--ring-warm);
 }
 
 .btn--secondary:active {

@@ -1,4 +1,5 @@
 /* ==================== APPLICATIONS SCREEN ==================== */
+/* Claude Design System - Clean, editorial layout */
 
 .screen--applications {
   padding: var(--space-4);
@@ -12,8 +13,10 @@
 }
 
 .screen-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.20;
   color: var(--color-text);
 }
 
@@ -24,14 +27,14 @@
   min-width: 24px;
   height: 24px;
   padding: 0 var(--space-2);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   background-color: var(--color-primary);
   color: white;
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* Filter bar row */
 .filter-bar {
   display: flex;
   gap: var(--space-3);
@@ -51,21 +54,22 @@
 
 .sort-select {
   padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--color-text-secondary);
+  border: 1px solid var(--border-warm);
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
   color: var(--color-text);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   cursor: pointer;
   min-height: 44px;
   flex-shrink: 0;
+  box-shadow: 0px 0px 0px 1px var(--border-warm);
 }
 
-/* Applications list */
 .applications-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
 #filter-bar {
@@ -83,16 +87,16 @@
 
 #filter-bar .sort-select {
   padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--color-text-secondary);
+  border: 1px solid var(--border-warm);
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
   color: var(--color-text);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   cursor: pointer;
   min-height: 44px;
 }
 
-/* Empty state */
 .empty-state {
   display: none;
   flex-direction: column;
@@ -100,23 +104,25 @@
   justify-content: center;
   min-height: 300px;
   text-align: center;
-  padding: var(--space-6);
+  padding: var(--space-8);
 }
 
 .empty-state__illustration {
   font-size: 4rem;
   margin-bottom: var(--space-4);
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .empty-state__title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 500;
   color: var(--color-text);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .empty-state__text {
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   color: var(--color-text-secondary);
 }

@@ -1,5 +1,5 @@
 /* ==================== MODERN CSS RESET ==================== */
-/* Based on Josh Comeau's approach with sensible defaults for a mobile web app */
+/* Adapted for Claude/Anthropic Design System */
 
 *,
 *::before,
@@ -24,12 +24,10 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-sans);
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.5;
+  line-height: 1.60;
 }
 
 img,
@@ -74,35 +72,46 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
-  line-height: 1.2;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.20;
 }
 
-/* Remove scrollbar from body — critical for viewport lock */
 body {
   overflow: hidden;
 }
 
-/* Ensure inputs don't have weird default styling on iOS */
 input[type="text"],
 input[type="date"],
 input[type="url"],
 textarea {
   -webkit-appearance: none;
   appearance: none;
-  border: 1px solid var(--color-text-secondary);
-  border-radius: var(--radius-sm);
-  padding: var(--space-3) var(--space-4);
-  font-size: 16px; /* Prevents zoom on iOS */
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  padding: 1.6px 12px;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
 }
 
-/* Focus styling for keyboard navigation */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px rgba(56, 152, 236, 0.15);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-tertiary);
+}
+
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
-/* Remove focus outline for mouse users */
 :focus:not(:focus-visible) {
   outline: none;
 }

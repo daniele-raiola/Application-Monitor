@@ -1,4 +1,5 @@
 /* ==================== CALENDAR COMPONENT ==================== */
+/* Claude Design System - Warm, rounded cells */
 
 .calendar-grid {
   display: grid;
@@ -17,10 +18,12 @@
 
 .calendar-grid__weekday {
   text-align: center;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 0.75rem;
+  letter-spacing: 0.12px;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
   padding: var(--space-2);
 }
 
@@ -33,9 +36,9 @@
   padding: var(--space-2);
   border-radius: var(--radius-md);
   background-color: var(--color-surface);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-light);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
   position: relative;
   touch-action: manipulation;
   user-select: none;
@@ -57,17 +60,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   background-color: var(--color-primary);
   border-radius: 50%;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.15;
 }
 
 .calendar-grid__cell--selected {
   background-color: var(--color-primary);
   color: white;
+  border-color: var(--color-primary);
 }
 
 .calendar-grid__cell--conflict {
@@ -77,14 +81,15 @@
 }
 
 .calendar-grid__date {
-  font-weight: 600;
-  font-size: 1rem;
-  color: inherit;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--color-text);
 }
 
 .calendar-grid__events {
   display: flex;
-  gap: 2px;
+  gap: 3px;
   margin-top: var(--space-1);
   justify-content: center;
   flex-wrap: wrap;
@@ -96,26 +101,26 @@
   border-radius: 50%;
 }
 
-.calendar-grid__event-dot--deadline { background-color: #FF4444; }
-.calendar-grid__event-dot--interview { background-color: #FFA500; }
-.calendar-grid__event-dot--exam { background-color: #FFD700; }
-.calendar-grid__event-dot--results { background-color: #00CC66; }
+.calendar-grid__event-dot--deadline { background-color: var(--color-danger); }
+.calendar-grid__event-dot--interview { background-color: var(--color-warning); }
+.calendar-grid__event-dot--exam { background-color: var(--color-primary); }
+.calendar-grid__event-dot--results { background-color: var(--color-success); }
 
 .calendar-grid__overflow {
+  font-family: var(--font-sans);
   font-size: 0.625rem;
-  color: var(--color-text-secondary);
-  margin-top: 1px;
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
 }
 
 .calendar-grid__conflict-warning {
   position: absolute;
   top: 4px;
   right: 4px;
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   color: var(--color-warning);
 }
-
-/* ========== CALENDAR NAVIGATION ========== */
 
 .calendar-nav {
   display: flex;
@@ -123,27 +128,32 @@
   align-items: center;
   padding: var(--space-4);
   background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  margin: var(--space-4);
+  box-shadow: var(--shadow-card);
 }
 
 .calendar-nav__month {
-  font-weight: 600;
-  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.3rem;
   color: var(--color-text);
 }
 
 .calendar-nav__btn {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
   background-color: var(--color-surface-raised);
   color: var(--color-text);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-smooth));
+  transition: all var(--duration-fast) var(--ease-smooth);
   touch-action: manipulation;
+  box-shadow: 0px 0px 0px 1px var(--ring-warm);
 }
 
 .calendar-nav__btn:active {

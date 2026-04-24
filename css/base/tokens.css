@@ -1,49 +1,84 @@
 /* ==================== DESIGN TOKENS ==================== */
-/* Centralized design system for consistent theming */
+/* Claude/Anthropic Design System */
 
 :root {
-  /* ========== COLORS ========== */
-  --color-bg: #F7F7F2;
-  --color-surface: #FFFFFF;
-  --color-surface-raised: #F0F0EB;
-  --color-primary: #2C3E8C;      /* Deep academic blue */
-  --color-accent: #E8A020;       /* Academic gold */
-  --color-success: #2D8C4E;
-  --color-warning: #E07820;
-  --color-danger: #C0392B;
-  --color-muted: #8C8C8C;
-  --color-text: #1A1A1A;
-  --color-text-secondary: #5A5A5A;
+  /* ========== PRIMARY COLORS ========== */
+  --color-primary: #c96442;           /* Terracotta Brand - CTA buttons */
+  --color-primary-hover: #b55a3a;     /* Darker terracotta */
+  --color-accent: #d97757;            /* Coral Accent */
+  --color-text: #141413;              /* Anthropic Near Black */
+  --color-text-secondary: #5e5d59;    /* Olive Gray */
+  --color-text-tertiary: #87867f;     /* Stone Gray */
+  --color-text-muted: #3d3d3a;         /* Dark Warm */
 
-  /* Status Colors */
-  --status-planning: #8C8C8C;
-  --status-drafting: #5B8FD4;
-  --status-submitted: #2D8C4E;
-  --status-under-review: #9B59B6;
-  --status-interviewing: #E07820;
-  --status-accepted: #E8A020;    /* Gold */
-  --status-rejected: #C0392B;
+  /* ========== BACKGROUND & SURFACE ========== */
+  --color-bg: #f5f4ed;                /* Parchment - primary page background */
+  --color-surface: #faf9f5;           /* Ivory - cards and elevated containers */
+  --color-surface-raised: #e8e6dc;   /* Warm Sand - buttons and interactive surfaces */
+  --color-surface-white: #ffffff;    /* Pure White - for specific buttons */
+
+  /* ========== DARK SURFACES ========== */
+  --color-dark: #141413;              /* Anthropic Near Black */
+  --color-dark-surface: #30302e;     /* Dark Surface - dark theme containers */
+  --color-dark-text: #b0aea5;         /* Warm Silver - text on dark surfaces */
+
+  /* ========== BORDERS ========== */
+  --border-light: #f0eee6;            /* Border Cream */
+  --border-warm: #e8e6dc;             /* Border Warm */
+  --border-dark: #30302e;             /* Border Dark */
+
+  /* ========== RING SHADOWS ========== */
+  --ring-warm: #d1cfc5;               /* Ring Warm - hover/focus states */
+  --ring-subtle: #dedc01;            /* Ring Subtle */
+  --ring-deep: #c2c0b6;              /* Ring Deep - active/pressed states */
+
+  /* ========== SEMANTIC COLORS ========== */
+  --color-success: #2d8c4e;
+  --color-warning: #e07820;
+  --color-danger: #b53333;            /* Error Crimson */
+  --color-focus: #3898ec;             /* Focus Blue - only cool color */
+  --color-muted: #6b6b6b;
+
+  /* ========== STATUS COLORS ========== */
+  --status-planning: #87867f;
+  --status-drafting: #5b8fd4;
+  --status-submitted: #2d8c4e;
+  --status-under-review: #9b59b6;
+  --status-interviewing: #e07820;
+  --status-accepted: #c96442;        /* Gold -> Terracotta */
+  --status-rejected: #b53333;
 
   /* ========== SPACING (8px grid) ========== */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
+  --space-1: 3px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 8px;
+  --space-5: 10px;
+  --space-6: 12px;
+  --space-8: 16px;
+  --space-10: 20px;
+  --space-12: 24px;
+  --space-16: 32px;
+  --space-20: 40px;
+  --space-24: 48px;
+  --space-32: 64px;
 
   /* ========== BORDER RADII ========== */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-pill: 9999px;
+  --radius-sharp: 4px;                /* Sharp - minimal inline elements */
+  --radius-subtle: 6px;              /* Subtly rounded - secondary elements */
+  --radius-sm: 8px;                  /* Comfortably rounded - standard buttons/cards */
+  --radius-md: 12px;                 /* Generously rounded - primary buttons/inputs */
+  --radius-lg: 16px;                 /* Very rounded - featured containers */
+  --radius-xl: 24px;                 /* Highly rounded - tag-like elements */
+  --radius-2xl: 32px;               /* Maximum rounded - hero containers */
+  --radius-pill: 9999px;            /* Pills and full round */
 
   /* ========== SHADOWS ========== */
-  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  --shadow-fab: 0 4px 16px rgba(44, 62, 140, 0.35);
-  --shadow-modal: 0 -4px 32px rgba(0, 0, 0, 0.12);
+  --shadow-whisper: rgba(0, 0, 0, 0.05) 0px 4px 24px;  /* Elevated content */
+  --shadow-card: 0px 0px 0px 1px var(--border-light); /* Ring-based border */
+  --shadow-card-elevated: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-fab: 0 4px 16px rgba(201, 100, 66, 0.35);
+  --shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.12);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 
@@ -66,5 +101,3 @@
   --duration-normal: 220ms;
   --duration-slow: 320ms;
 }
-
-/* Dark theme overrides will be applied later via media query and data-theme attribute */
