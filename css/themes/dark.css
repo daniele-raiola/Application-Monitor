@@ -4,8 +4,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #141413;
-    --color-surface: #1e1e1d;
-    --color-surface-raised: #30302e;
+    --color-surface: #30302e;
+    --color-surface-raised: #3d3d3a;
     --color-text: #faf9f5;
     --color-text-secondary: #b0aea5;
     --color-text-tertiary: #87867f;
@@ -30,8 +30,8 @@
 
 [data-theme="dark"] {
   --color-bg: #141413;
-  --color-surface: #1e1e1d;
-  --color-surface-raised: #30302e;
+  --color-surface: #30302e;
+  --color-surface-raised: #3d3d3a;
   --color-text: #faf9f5;
   --color-text-secondary: #b0aea5;
   --color-text-tertiary: #87867f;
