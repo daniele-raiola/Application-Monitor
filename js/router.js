@@ -45,7 +45,7 @@ export class Router {
    * Navigate to a route
    * @param {string} route - e.g., '#/dashboard'
    */
-  navigate(route) {
+  navigate(route, force = true) {
     if (!route || route.length === 0) {
       route = '#/dashboard';
     }
@@ -55,8 +55,8 @@ export class Router {
       route = '#' + route;
     }
 
-    // Don't navigate if already on this route
-    if (this.currentRoute === route) {
+    // Don't navigate if already on this route (unless forced)
+    if (!force && this.currentRoute === route) {
       return;
     }
 
@@ -102,6 +102,7 @@ export class Router {
     }
 
     const container = document.getElementById('screen-container');
+    
     if (container) {
       screenController.render(container);
     }
@@ -134,7 +135,8 @@ export class Router {
   }
 
   /**
-   * Initialize router — call on app startup
+   * Initialize router — call on app startup AFTER screens are registered
+   * Just sets initial route, doesn't render yet
    */
   init() {
     // Use current hash or default to dashboard
@@ -145,7 +147,7 @@ export class Router {
     if (!hash.startsWith('#')) {
       hash = '#' + hash;
     }
-    this.navigate(hash);
+    this.currentRoute = hash;
   }
 }
 

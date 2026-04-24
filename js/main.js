@@ -4,6 +4,8 @@
  * Initializes services, components, router, and screens
  */
 
+console.log('>>> MAIN.JS STARTING <<<');
+
 // Import services
 import { storage } from './services/storage.js';
 import * as appService from './services/app-service.js';
@@ -54,7 +56,7 @@ function initApp() {
   applyTheme();
   console.log('Theme applied');
 
-  // Initialize router
+  // Initialize router (set initial route only, don't render yet)
   router.init();
   console.log('Router initialized');
 
@@ -89,8 +91,8 @@ function initApp() {
     toast.info('Welcome! Tap the + button to add your first application.');
   }
 
-  // Render initial screen
-  router.renderScreen();
+  // Navigate to initial route (will render the screen)
+  router.navigate(ROUTES.DASHBOARD);
 
   console.log('App initialization complete');
 }
