@@ -8,7 +8,7 @@ const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/assets/icons/app-icon.svg',
+  '/assets/icons/app-icon-192.svg',
   '/css/base/reset.css',
   '/css/base/tokens.css',
   '/css/base/typography.css',
