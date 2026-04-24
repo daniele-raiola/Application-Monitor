@@ -9,7 +9,10 @@ const STATIC_ASSETS = [
   '/index.html',
   '/manifest.json',
   '/assets/icons/app-icon-192.svg',
-  '/css/base/reset.css',
+  '/assets/icons/app-icon-512.svg',
+  '/assets/icons/favicon.svg',
+  '/js/main.js',
+  '/js/router.js',
   '/css/base/tokens.css',
   '/css/base/typography.css',
   '/css/layout/shell.css',
@@ -30,7 +33,20 @@ const STATIC_ASSETS = [
   '/css/screens/detail.css',
   '/css/screens/settings.css',
   '/css/themes/light.css',
-  '/css/themes/dark.css'
+  '/css/themes/dark.css',
+  '/js/utils/constants.js',
+  '/js/services/storage.js',
+  '/js/services/app-service.js',
+  '/js/services/calendar-service.js',
+  '/js/services/stats-service.js',
+  '/js/components/BottomNav.js',
+  '/js/components/Toast.js',
+  '/js/components/Fab.js',
+  '/js/screens/DashboardScreen.js',
+  '/js/screens/ApplicationsScreen.js',
+  '/js/screens/CalendarScreen.js',
+  '/js/screens/SettingsScreen.js',
+  '/js/screens/DetailScreen.js'
 ];
 
 /**
