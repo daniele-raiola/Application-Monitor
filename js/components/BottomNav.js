@@ -54,9 +54,9 @@ export class BottomNav {
    * Setup listeners for route changes
    */
   setupListeners() {
-    this.router.onNavigate = () => {
+    this.router.addOnNavigate(() => {
       this.updateActive();
-    };
+    });
   }
 
   /**

@@ -3,9 +3,8 @@
  * Calendar view screen controller
  */
 
-import { Fab } from '../components/Fab.js';
 import { Modal } from '../components/Modal.js';
-import { Toast } from '../components/Toast.js';
+import { toast } from '../components/toast.js';
 import { getUpcomingEvents, aggregateEvents, detectConflicts, getEventsForDate, getEventTypeColor } from '../services/calendar-service.js';
 import { getTodayISO, parseISODate, formatDate } from '../utils/date-utils.js';
 import { EVENT_TYPE_COLORS } from '../utils/constants.js';
@@ -15,7 +14,6 @@ export class CalendarScreen {
     this.router = router;
     this.appService = appService;
     this.calendarService = calendarService;
-    this.fab = null;
     this.currentYear = new Date().getFullYear();
     this.currentMonth = new Date().getMonth() + 1;
     this.selectedDate = null;
@@ -64,13 +62,6 @@ export class CalendarScreen {
     this.setupCalendar();
 this.setupFab();
     this.setupEventListeners();
-  }
-
-  /**
-   * Setup FAB for calendar screen - disabled for now
-   */
-  setupFab() {
-    // FAB disabled
   }
 
   setupCalendar() {
@@ -314,18 +305,13 @@ this.setupFab();
   }
 
   /**
-   * Setup FAB for calendar screen
+   * Setup FAB - handled globally, just add event listener here
    */
   setupFab() {
-    if (this.fab) {
-      this.fab.destroy();
-    }
-    this.fab = new Fab(this.router, (screen) => {
-      if (screen === 'calendar') {
-        this.openQuickAddModal();
-      }
+    // FAB is global, just listen for the event
+    window.addEventListener('fab:add-calendar', () => {
+      this.openQuickAddModal();
     });
-    this.fab.updateVisibility();
   }
 
   /**
@@ -336,7 +322,7 @@ this.setupFab();
     const apps = this.appService.getAllApplications();
     
     if (apps.length === 0) {
-      Toast.info('Add an application first from Applications screen');
+      toast.info('Add an application first from Applications screen');
       return;
     }
 
@@ -416,11 +402,11 @@ this.setupFab();
         const field = document.getElementById('quick-deadline-type').value;
         const date = document.getElementById('quick-deadline-date').value;
         if (!appId || !field || !date) {
-          Toast.error('Please fill in all fields');
+          toast.error('Please fill in all fields');
           return;
         }
         this.appService.updateApplication(appId, { [field]: date });
-        Toast.success('Deadline added!');
+        toast.success('Deadline added!');
         modal.close();
         this.setupCalendar();
       }},

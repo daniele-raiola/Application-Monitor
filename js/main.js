@@ -16,6 +16,7 @@ import * as statsService from './services/stats-service.js';
 import { router } from './router.js';
 import { BottomNav } from './components/BottomNav.js';
 import { toast } from './components/Toast.js';
+import { Fab } from './components/Fab.js';
 
 // Import screens
 import { DashboardScreen } from './screens/DashboardScreen.js';
@@ -59,6 +60,13 @@ function initApp() {
   // Initialize router (set initial route only, don't render yet)
   router.init();
   console.log('Router initialized');
+
+  // Initialize global FAB
+  const fab = new Fab(router, (screen) => {
+    window.dispatchEvent(new CustomEvent(`fab:add-${screen}`));
+  });
+  router.addOnNavigate((route) => fab.update(route));
+  console.log('Global FAB initialized');
 
   // Initialize bottom navigation
   const bottomNav = new BottomNav(router);

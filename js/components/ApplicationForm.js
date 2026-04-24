@@ -27,6 +27,7 @@ export class ApplicationForm {
     
     const form = this.renderForm();
     this.modal.setContentElement(form);
+    this.modal.open();
     
     this.modal.addActions([
       {
@@ -40,8 +41,6 @@ export class ApplicationForm {
         onClick: () => this.modal.close()
       }
     ]);
-    
-    this.modal.open();
   }
 
   /**

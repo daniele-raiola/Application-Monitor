@@ -8,7 +8,7 @@ export class Router {
   constructor() {
     this.currentRoute = '#/dashboard';
     this.screens = {};
-    this.onNavigate = null;
+    this.onNavigate = [];
 
     this.setupListeners();
   }
@@ -20,6 +20,14 @@ export class Router {
    */
   registerScreen(route, screenController) {
     this.screens[route] = screenController;
+  }
+
+  /**
+   * Add a navigation callback
+   * @param {Function} callback - Called with (route) on navigation
+   */
+  addOnNavigate(callback) {
+    this.onNavigate.push(callback);
   }
 
   /**
@@ -62,9 +70,8 @@ export class Router {
 
     this.currentRoute = route;
 
-    if (this.onNavigate) {
-      this.onNavigate(route);
-    }
+    // Call all navigation callbacks
+    this.onNavigate.forEach(cb => cb(route));
 
     // Use replaceState to avoid hashchange triggering another navigation
     try {

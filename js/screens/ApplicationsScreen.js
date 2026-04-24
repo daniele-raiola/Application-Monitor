@@ -6,7 +6,6 @@
 import { ROUTES, STATUS_PIPELINE } from '../utils/constants.js';
 import { advanceStatus, regressStatus, deleteApplication, getAllApplications } from '../services/app-service.js';
 import { AppCard } from '../components/AppCard.js';
-import { Fab } from '../components/Fab.js';
 import { toast } from '../components/Toast.js';
 import { ApplicationForm } from '../components/ApplicationForm.js';
 import { storage } from '../services/storage.js';
@@ -15,7 +14,6 @@ export class ApplicationsScreen {
   constructor(router, appService) {
     this.router = router;
     this.appService = appService;
-    this.fab = null;
     this.filterStatus = 'all';
     this.sortBy = 'deadline-asc';
     this.container = null;
@@ -180,10 +178,10 @@ export class ApplicationsScreen {
   }
 
   /**
-   * Setup FAB
+   * Setup FAB - handled globally now
    */
   setupFab() {
-    // FAB disabled for now - will re-enable after app is working
+    // FAB is now handled globally in main.js
   }
 
   /**

@@ -29,13 +29,10 @@ export class Fab {
     
     if (route === ROUTES.DASHBOARD) return null;
     if (route === ROUTES.SETTINGS) return null;
+    if (route === ROUTES.CALENDAR || route.startsWith('#/calendar')) return null;
     
     if (route === ROUTES.APPLICATIONS || route.startsWith('#/applications')) {
-      return { icon: '+', title: 'Add Application', action: () => this.handleAction('applications') };
-    }
-    
-    if (route === ROUTES.CALENDAR || route.startsWith('#/calendar')) {
-      return { icon: '+', title: 'Add Deadline', action: () => this.handleAction('calendar') };
+      return { icon: '+', title: 'Add Application', action: () => this.handleAction('application') };
     }
     
     if (route.startsWith('#/detail/')) {
@@ -49,7 +46,8 @@ export class Fab {
     if (this.onClickCallback) {
       this.onClickCallback(type);
     } else {
-      window.dispatchEvent(new CustomEvent('fab:add-' + type));
+      const eventName = type.endsWith('s') ? `fab:add-${type.slice(0, -1)}` : `fab:add-${type}`;
+      window.dispatchEvent(new CustomEvent(eventName));
     }
   }
   
@@ -76,5 +74,11 @@ export class Fab {
       this.fabEl.remove();
       this.fabEl = null;
     }
+  }
+
+  destroy() {
+    this.hide();
+    this.router = null;
+    this.onClickCallback = null;
   }
 }
