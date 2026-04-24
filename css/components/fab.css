@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-fab), 0px 0px 0px 1px var(--color-primary);
-  z-index: var(--z-fab);
+  z-index: 100;
   transition: all var(--duration-fast) var(--ease-smooth);
   touch-action: manipulation;
   padding: 0;
@@ -68,8 +68,8 @@
 
 @supports (padding: max(0px)) {
   .fab {
-    right: max(20px, calc(env(safe-area-inset-right) + 8px));
-    bottom: calc(var(--bottom-nav-height) + 16px + max(0, env(safe-area-inset-bottom)));
+    right: max(20px, env(safe-area-inset-right, 20px));
+    bottom: max(calc(var(--bottom-nav-height) + 16px), calc(var(--bottom-nav-height) + 16px + env(safe-area-inset-bottom, 0px)));
   }
 }
 

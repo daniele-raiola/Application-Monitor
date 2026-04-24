@@ -66,7 +66,12 @@ export class Fab {
       if (config.action) config.action();
     });
     
-    document.body.appendChild(this.fabEl);
+    const appShell = document.getElementById('app-shell');
+    if (appShell) {
+      appShell.appendChild(this.fabEl);
+    } else {
+      document.body.appendChild(this.fabEl);
+    }
   }
   
   hide() {
