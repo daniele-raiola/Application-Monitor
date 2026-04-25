@@ -52,7 +52,6 @@ export class ApplicationsScreen {
     this.renderFilterBar();
     this.renderApplicationsList();
     this.setupFab();
-    this.setupEventListeners();
   }
 
   /**
@@ -182,6 +181,13 @@ export class ApplicationsScreen {
    */
   setupFab() {
     // FAB is now handled globally in main.js
+  }
+
+  /**
+   * Initialize screen - called once at app startup
+   */
+  init() {
+    this.setupEventListeners();
   }
 
   /**

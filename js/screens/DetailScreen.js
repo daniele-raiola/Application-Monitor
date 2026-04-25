@@ -89,13 +89,14 @@ export class DetailScreen {
 
     screenEl.innerHTML = `
       <div class="detail-header">
+        <button class="detail-back-btn" id="detail-back">←</button>
         <div class="detail-header__content">
           <div class="detail-header__university">${app.universityName || 'Unknown University'}</div>
           <div class="detail-header__program">${app.programName || 'PhD Program'}</div>
           <span class="detail-header__status" 
                 style="background-color: ${STATUS_COLORS[app.status]}">${app.status}</span>
         </div>
-        <button class="detail-back-btn" id="detail-back">←</button>
+        <button class="detail-edit-btn" id="detail-edit" title="Edit Application">✎</button>
       </div>
 
       <!-- Deadline Section -->
@@ -220,6 +221,11 @@ export class DetailScreen {
     // Setup back button
     document.getElementById('detail-back')?.addEventListener('click', () => {
       window.location.hash = '#/applications';
+    });
+
+    // Setup edit button
+    document.getElementById('detail-edit')?.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('fab:edit-application', { detail: { appId: this.app.id } }));
     });
   }
 

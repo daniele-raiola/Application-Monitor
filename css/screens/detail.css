@@ -65,6 +65,27 @@
   color: white;
 }
 
+.detail-edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-surface-raised);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  flex-shrink: 0;
+  box-shadow: 0px 0px 0px 1px var(--ring-warm);
+}
+
+.detail-edit-btn:active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
 .detail-section {
   margin-bottom: var(--space-8);
 }

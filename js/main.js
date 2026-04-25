@@ -62,8 +62,12 @@ function initApp() {
   console.log('Router initialized');
 
   // Initialize global FAB
-  const fab = new Fab(router, (screen) => {
-    window.dispatchEvent(new CustomEvent(`fab:add-${screen}`));
+  const fab = new Fab(router, (screen, appId) => {
+    if (screen === 'detail' && appId) {
+      window.dispatchEvent(new CustomEvent('fab:edit-application', { detail: { appId } }));
+    } else {
+      window.dispatchEvent(new CustomEvent(`fab:add-${screen}`));
+    }
   });
   router.addOnNavigate((route) => fab.update(route));
   console.log('Global FAB initialized');
@@ -75,6 +79,7 @@ function initApp() {
   // Create screen instances
   const dashboardScreen = new DashboardScreen(router, appService, statsService, calendarService);
   const applicationsScreen = new ApplicationsScreen(router, appService);
+  applicationsScreen.init();
   const calendarScreen = new CalendarScreen(router, appService, calendarService);
   const settingsScreen = new SettingsScreen(router, storage);
   const detailScreen = new DetailScreen(router, appService);

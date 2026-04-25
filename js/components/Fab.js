@@ -30,24 +30,25 @@ export class Fab {
     if (route === ROUTES.DASHBOARD) return null;
     if (route === ROUTES.SETTINGS) return null;
     if (route === ROUTES.CALENDAR || route.startsWith('#/calendar')) return null;
+    if (route.startsWith('#/detail/')) return null;
     
     if (route === ROUTES.APPLICATIONS || route.startsWith('#/applications')) {
       return { icon: '+', title: 'Add Application', action: () => this.handleAction('application') };
     }
     
-    if (route.startsWith('#/detail/')) {
-      return { icon: 'Edit', title: 'Edit', action: () => this.handleAction('detail') };
-    }
-    
     return null;
   }
   
-  handleAction(type) {
+  handleAction(type, appId = null) {
     if (this.onClickCallback) {
-      this.onClickCallback(type);
+      this.onClickCallback(type, appId);
     } else {
-      const eventName = type.endsWith('s') ? `fab:add-${type.slice(0, -1)}` : `fab:add-${type}`;
-      window.dispatchEvent(new CustomEvent(eventName));
+      if (type === 'detail' && appId) {
+        window.dispatchEvent(new CustomEvent('fab:edit-application', { detail: { appId } }));
+      } else {
+        const eventName = type.endsWith('s') ? `fab:add-${type.slice(0, -1)}` : `fab:add-${type}`;
+        window.dispatchEvent(new CustomEvent(eventName));
+      }
     }
   }
   
